@@ -1,16 +1,17 @@
-pipeline{
-  agent any
+pipeline {
+    agent any
 
-  stages{
-    stage('compile java program'){
-      stepa{
-        bat 'javac Helloworld.java'
-      }
-      stage('Run Java program'){
-        steps{
-          bat 'java Helloworld'
+    stages {
+        stage('Compile Java Program') {
+            steps {
+                bat 'javac HelloWorld.java'
+            }
         }
-      }
+
+        stage('Run Java Program') {
+            steps {
+                bat 'java HelloWorld'
+            }
+        }
     }
-  }
 }
